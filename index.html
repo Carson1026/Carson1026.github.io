@@ -79,6 +79,9 @@
             text-align: center;
             box-sizing: border-box;
         }
+		.slick-center .slick-caption {
+            transform: translateY(0); /* Show caption for centered image */
+        }
     </style>
 </head>
 <body>
@@ -106,7 +109,7 @@
         $(document).ready(function(){
             $('.slick-slider').slick({
                 centerMode: true,
-                centerPadding: '0',
+                centerPadding: '20px',
                 slidesToShow: 3,
                 focusOnSelect: true,
                 dots: true,
