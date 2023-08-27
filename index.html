@@ -68,7 +68,7 @@
             max-height: 100%;
             object-fit: cover;
         }
-        .slick-caption {
+		.slick-caption {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -77,7 +77,13 @@
             color: #fff;
             padding: 10px;
             text-align: center;
+            transform: translateY(100%); /* Move captions out of view */
+            transition: transform 0.3s ease-in-out;
             box-sizing: border-box;
+        }
+		.slick-center {
+            transform: scale(1.2); /* Make the center image bigger */
+            z-index: 1;
         }
 		.slick-center .slick-caption {
             transform: translateY(0); /* Show caption for centered image */
@@ -112,7 +118,7 @@
                 centerPadding: '20px',
                 slidesToShow: 3,
                 focusOnSelect: true,
-                dots: true,
+                dots: false,
                 autoplay: true,
                 autoplaySpeed: 3000
             });
