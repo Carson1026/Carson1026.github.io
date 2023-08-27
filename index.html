@@ -39,10 +39,12 @@
         <h2>About Me</h2>
         <p>Hello! I'm a simple website created using HTML.</p>
 <!-- Image Carousel -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Carousel with Captions</title>
+    <title>Slick Carousel Example</title>
     
     <!-- Include Slick Carousel CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
@@ -57,17 +59,25 @@
     <!-- Your custom styles -->
     <style>
         .slick-slider {
-			width: 80%; /* Set the desired width */
-			margin: 0 auto; /* Center horizontally using margin */
-		}
-
+            width: 100%;
+            max-height: 80vh;
+            margin: 0 auto;
+        }
         .slick-slide img {
-            width: 50%;
-            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
         }
         .slick-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
             text-align: center;
-            margin-top: 10px;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -90,34 +100,20 @@
     <!-- Initialize Slick Carousel -->
     <script>
         $(document).ready(function(){
-			$('.center').slick({
-				centerMode: true,
-				centerPadding: '60px',
-				 slidesToShow: 3,
-				 responsive: [
-				{
-				  breakpoint: 768,
-				  settings: {
-					arrows: false,
-					centerMode: true,
-					centerPadding: '40px',
-					slidesToShow: 3
-				  }
-				},
-				{
-				  breakpoint: 480,
-				  settings: {
-					arrows: false,
-					centerMode: true,
-					centerPadding: '40px',
-					slidesToShow: 1
-				  }
-				}
-			  ]
-			});
+            $('.slick-slider').slick({
+                centerMode: true,
+                centerPadding: '0',
+                slidesToShow: 3,
+                focusOnSelect: true,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
         });
     </script>
 </body>
+</html>
+<!-- End Image Carousel -->
     </main>
     <footer>
         &copy; 2023 Government of Northwood-Oregon. All rights reserved.
